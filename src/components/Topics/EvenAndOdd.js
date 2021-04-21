@@ -12,16 +12,16 @@ export default class EvenAndOdd extends Component {
     handleChange(val){
         this.setState({ userInput: val });
     }
-    assignEvenAndOdds(userInput){
-        let arr = userInput;
+    assignEvenAndOdds(userInput) {
+        let arr = userInput.split(',');
         let evens = [];
         let odds = [];
-        for(let i = 0; 1 < arr.length; i++){
-            if( arr[i] % 2 === 0){
-                evens.push( parseInt(arr[i], 10) );
-            }else{
-                odds.push( parseInt(arr[i], 10) );
-            }
+        for ( let i = 0; i < arr.length; i++ ) {
+          if ( arr[i] % 2 === 0 ) {
+            evens.push( parseInt(arr[i], 10) );
+          } else {
+            odds.push( parseInt(arr[i], 10) );
+          }
         }
         this.setState({evenArray: evens, oddArray: odds })
     }
